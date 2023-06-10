@@ -2,6 +2,7 @@ const gravity = new BABYLON.Vector2(0, -9.8);
 const flightForce = 5; // The amount of force applied when the "fly" button is pressed
 
 const greetings = [
+    "It's a Foobar!",
     'It\'s a bird!',
     'It\'s a plane!',
     '1000% more Cube!',
@@ -37,4 +38,6 @@ const greetings = [
     'If my edges are rounded, am I still a cube?',
     'Nobody ever wants to see a floppy cube',
     'Flapping of flopping?',
+    'It\'s Cube Tastic',
+    'A Whole New World',
 ];
