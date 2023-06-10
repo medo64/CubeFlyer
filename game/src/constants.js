@@ -18,7 +18,7 @@ const greetings = [
     'I\'m a barbie cube in a barbie world...',
     'Not an usual bird.',
     'Cube is a new circle',
-    'My favorite art is cubisam.',
+    'My favorite art movement is cubism.',
     'Spacing out...',
     'Return of the space',
     'This is a touchy subject.',
