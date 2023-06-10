@@ -33,7 +33,7 @@ const greetings = [
     'I never read README.',
     'Am I the cube or it\'s this just a dream?',
     'Is this just a cube or is this fantacy?',
-    'Cube is just an overachiving square.',
+    'Cube is just an overachieving square.',
     'If my edges are rounded, am I still a cube?',
     'Nobody ever wants to see a floppy cube',
     'Flapping of flopping?',
