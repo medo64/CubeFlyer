@@ -8,7 +8,7 @@ const greetings = [
     'A Whole New Dimension!',
     'What? You never saw a cube fly before?',
     'Gravity is just a suggestion.',
-    'You can now see the gravity of situation.',
+    'You can now see the gravity of the situation.',
     'Single key ought to be enough for anybody.',
     'Who gives the floppying bird?',
     'I believe I can fly!',
