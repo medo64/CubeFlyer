@@ -40,4 +40,6 @@ const greetings = [
     'Flapping of flopping?',
     'It\'s Cube Tastic',
     'A Whole New World',
+    'Cubing is my passion!',
+    'Never saw a number I couldn\'t cube',
 ];
