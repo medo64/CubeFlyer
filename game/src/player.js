@@ -29,8 +29,8 @@ class Player extends GameObject {
 
     update(deltaTime) {
         // Update the players physics:
-        this.velocity.y += gravity.y * deltaTime;
-        this.capVelocity(20);
+        this.velocity.y += getGravityY() * deltaTime;
+        this.capVelocity(getVelocityCap());
         this.playerMesh.position.y += this.velocity.y * deltaTime;
         if (this.testGameOver()) {
             this.endGame()
@@ -70,7 +70,7 @@ class Player extends GameObject {
     }
     
     onPlayerFlight() {
-        this.velocity.y += flightForce;
+        this.velocity.y += getFlightForce();
     }
     
     capVelocity(cap) {

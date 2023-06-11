@@ -1,4 +1,5 @@
 var score = 0;
+var scoreMax = 0;
 var scoreText;
 
 var createHud = function() {
@@ -21,7 +22,7 @@ var createHud = function() {
 }
 
 var updateScoreText = function() {
-    scoreText.text = "Score: " + score;
+    scoreText.text = "Score: " + score + " (" + scoreMax + ")";
 }
 
 var resetScore = function() {
@@ -32,5 +33,6 @@ var resetScore = function() {
 
 var addScore = function(points) {
     score += points;
+    if (score > scoreMax) { scoreMax = score; }
     updateScoreText();
 }
