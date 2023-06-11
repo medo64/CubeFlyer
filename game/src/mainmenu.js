@@ -120,10 +120,53 @@ class MainMenu extends GameObject {
         this.instructionsText.horizontalAlignment = BABYLON.GUI.TextBlock.HORIZONTAL_ALIGNMENT_CENTER;
         this.instructionsText.width = .5;
         this.instructionsText.height = .9;
+        
+        // radio
+        this.panel = new BABYLON.GUI.StackPanel();
+        // let advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateForMesh(ground, 512, 512);
+        // advancedTexture.addControl(this.panel);
+        
+        // this allows test of diff
+        let textblock = new BABYLON.GUI.TextBlock();
+        textblock.height = "50px";
+        this.panel.addControl(textblock);  
+        
+        
+        var addRadio = function(text, parent) {
+
+        var button = new BABYLON.GUI.RadioButton();
+        button.width = "20px";
+        button.height = "20px";
+        button.color = "white";
+        button.background = "green";     
+
+        button.onIsCheckedChangedObservable.add(function(state) {
+            if (state) {
+                textblock.text = text;
+                // here would set globals
+            }
+        }); 
+        
+        
+
+        var header = BABYLON.GUI.Control.AddHeader(button, text, "100px", { isHorizontal: true, controlFirst: true });
+        header.height = "30px";
+        parent.addControl(header);    
+    }
+        
     
         this.hudTexture.addControl(this.welcomeText);
         this.hudTexture.addControl(this.greetingText);
         this.hudTexture.addControl(this.instructionsText);
+        this.hudTexture.addControl(this.instructionsText);
+        
+        addRadio("Easy", this.panel);
+        addRadio("Intermediate", this.panel);
+        addRadio("Hard", this.panel);
+        this.hudTexture.addControl(this.panel)
+        // addRadio("Intermediate", panel);
+        // addRadio("Difficult", panel);
+        // this.hudTexture.addControl(this.radioSelectEasy);
     }
 
     
@@ -131,6 +174,7 @@ class MainMenu extends GameObject {
         this.hudTexture.removeControl(this.welcomeText);
         this.hudTexture.removeControl(this.greetingText);
         this.hudTexture.removeControl(this.instructionsText);
+        this.hudTexture.removeControl(this.panel)
     }
 }
 

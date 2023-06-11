@@ -25,6 +25,7 @@ function setLevel(level) {
             flightForce = 5;
             gapSize = 3;
             obstacleSpeed = 1.5;
+            maxHeightChangeInPercent = 100;
             break;
     }
 }
@@ -55,7 +56,7 @@ function getObstacleSpeed() {
     return obstacleSpeed;
 }
 
-var heightDifferenceInPercent = 100;  // 0-100; 0 is no difference, 100 is max difference
-function getHeightDifferenceInPercent() {
-    return heightDifferenceInPercent;
+var maxHeightChangeInPercent = 100;  // 0-100; 0 is no difference, 100 is max difference
+function getMaxHeightChangeInPercent() {
+    return maxHeightChangeInPercent;
 }
