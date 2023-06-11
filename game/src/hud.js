@@ -8,7 +8,6 @@ var createHud = function() {
     scoreText = new BABYLON.GUI.TextBlock();
     // scoreText.fontFamily = "Comic Sans, Comic Sans MS";
     scoreText.fontFamily = "parchment";
-    parchment
     scoreText.color = "white";
     scoreText.fontSize = 48;
     scoreText.verticalAlignment = BABYLON.GUI.TextBlock.VERTICAL_ALIGNMENT_TOP;
