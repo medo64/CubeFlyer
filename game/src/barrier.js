@@ -1,3 +1,5 @@
+var lastHeight = 0;
+
 class Barrier extends GameObject {
     constructor() {
         super();
@@ -42,8 +44,21 @@ class Barrier extends GameObject {
     assignLocations() {
         // Pick a random center point
         var gapSize = getGapSize();
-        let height = -gameHeight + (gapSize/2) + (Math.random() * (gameHeight-(gapSize/2)) * 2);
-        this.ceilingBox.position.y = height + gapSize/2 + 5;
+        let height = -gameHeight + (gapSize / 2) + (Math.random() * (gameHeight - (gapSize / 2)) * 2);
+
+        var change = Math.abs(lastHeight - height);
+        var maxChange = getMaxHeightChangeInPercent() * gameHeight / 100;
+        if (change > maxChange) {
+            if (height > lastHeight) {
+                height = lastHeight + maxChange;
+            } else {
+                height = lastHeight - maxChange;
+            }
+        }
+        console.debug(gameHeight + " " + height+ " " + change);
+        lastHeight = height;
+
+        this.ceilingBox.position.y = height + gapSize / 2 + 5;
         this.floorBox.position.y = height - gapSize/2 - 5;
         this.ceilingBox.position.x = this.location;
         this.floorBox.position.x = this.location;
