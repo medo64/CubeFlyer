@@ -5,14 +5,18 @@ function setLevel(level) {
     switch (level) {
         case 1:
             velocityCap = 5;
+            gravityY = -2;
+            flightForce = 3;
+            gapSize = 5;
+            obstacleSpeed = 1.5;
             break;
 
         case 2:
+            gravityY = -6;
+            flightForce = 4;
+            gapSize = 4;
+            obstacleSpeed = 3.25;
             velocityCap = 10;
-            break;
-
-        case 3:
-            velocityCap = 20;
             break;
 
         default:
