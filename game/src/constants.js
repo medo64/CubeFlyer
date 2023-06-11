@@ -42,4 +42,5 @@ const greetings = [
     'A Whole New World',
     'Cubing is my passion!',
     'Never saw a number I couldn\'t cube',
+    'Would a cube smell as sweet under any other name?',
 ];

@@ -41,7 +41,7 @@ class Player extends GameObject {
         this.obstacleSpawnTimer -= deltaTime;
         if (this.obstacleSpawnTimer <= 0) {
             this.obstacleSpawnTimer = obstacleSpawnInterval;
-            
+            addScore(1);
             createObject(new Barrier());
         }
     }
