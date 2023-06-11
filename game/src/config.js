@@ -50,3 +50,8 @@ var obstacleSpeed = 1.5; // Changing this will impact how quickly obstacles in t
 function getObstacleSpeed() {
     return obstacleSpeed;
 }
+
+var heightDifferenceInPercent = 100;  // 0-100; 0 is no difference, 100 is max difference
+function getHeightDifferenceInPercent() {
+    return heightDifferenceInPercent;
+}
