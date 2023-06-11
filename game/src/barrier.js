@@ -1,7 +1,3 @@
-var obstacleSpeed = 1.5; // Changing this will impact how quickly obstacles in the game move.
-var gapSize = 3;  // This determines the size of the gap to create between the floor and ceiling.
-
-
 class Barrier extends GameObject {
     constructor() {
         super();
@@ -32,7 +28,7 @@ class Barrier extends GameObject {
 
     update(deltaTime) {
 
-        this.location -= deltaTime * obstacleSpeed;
+        this.location -= deltaTime * getObstacleSpeed();
 
         // Update the players physics:
         this.ceilingBox.position.x = this.location;
@@ -45,6 +41,7 @@ class Barrier extends GameObject {
 
     assignLocations() {
         // Pick a random center point
+        var gapSize = getGapSize();
         let height = -gameHeight + (gapSize/2) + (Math.random() * (gameHeight-(gapSize/2)) * 2);
         this.ceilingBox.position.y = height + gapSize/2 + 5;
         this.floorBox.position.y = height - gapSize/2 - 5;
