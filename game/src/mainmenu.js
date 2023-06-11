@@ -2,6 +2,12 @@ var gamepadManager = new BABYLON.GamepadManager();
 
 var deviceSourceManager;
 
+const levelConv = {
+    'Easy': 1,
+    'Intermediate': 2,
+    'Difficult': 3
+}
+
 class MainMenu extends GameObject {
     constructor() {
         super();
@@ -31,7 +37,7 @@ class MainMenu extends GameObject {
 
     onStartGame() {
         if (this.visible) {
-            setLevel(0);
+            // setLevel(0);
             this.visible = false;
             createObject(new Player());
         }
@@ -142,8 +148,12 @@ class MainMenu extends GameObject {
 
         button.onIsCheckedChangedObservable.add(function(state) {
             if (state) {
-                textblock.text = text;
+                // will show text of level
+                // textblock.text = text;
+                // will show number of level for switch case
+                // textblock.text = levelConv[text];
                 // here would set globals
+                setLevel(levelConv[text])
             }
         }); 
         
@@ -162,7 +172,7 @@ class MainMenu extends GameObject {
         
         addRadio("Easy", this.panel);
         addRadio("Intermediate", this.panel);
-        addRadio("Hard", this.panel);
+        addRadio("Difficult", this.panel);
         this.hudTexture.addControl(this.panel)
         // addRadio("Intermediate", panel);
         // addRadio("Difficult", panel);
