@@ -30,7 +30,7 @@ class Player extends GameObject {
     update(deltaTime) {
         // Update the players physics:
         this.velocity.y += gravity.y * deltaTime;
-        this.capVelocity(20);
+        this.capVelocity(getVelocityCap());
         this.playerMesh.position.y += this.velocity.y * deltaTime;
         if (this.testGameOver()) {
             this.endGame()
